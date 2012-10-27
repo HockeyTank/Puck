@@ -1,0 +1,51 @@
+<h1>Listing rinks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Addresscity</th>
+    <th>Addressstate</th>
+    <th>Addresszip</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Website</th>
+    <th>Surfacecount</th>
+    <th>Indoor</th>
+    <th>Openhockey</th>
+    <th>Sticktime</th>
+    <th>Proshop</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rinks.each do |rink| %>
+  <tr>
+    <td><%= rink.name %></td>
+    <td><%= rink.address1 %></td>
+    <td><%= rink.address2 %></td>
+    <td><%= rink.addresscity %></td>
+    <td><%= rink.addressstate %></td>
+    <td><%= rink.addresszip %></td>
+    <td><%= rink.phone1 %></td>
+    <td><%= rink.phone2 %></td>
+    <td><%= rink.website %></td>
+    <td><%= rink.surfacecount %></td>
+    <td><%= rink.indoor %></td>
+    <td><%= rink.openhockey %></td>
+    <td><%= rink.sticktime %></td>
+    <td><%= rink.proshop %></td>
+    <td><%= rink.notes %></td>
+    <td><%= link_to 'Show', rink %></td>
+    <td><%= link_to 'Edit', edit_rink_path(rink) %></td>
+    <td><%= link_to 'Destroy', rink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rink', new_rink_path %>
