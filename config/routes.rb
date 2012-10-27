@@ -1,4 +1,6 @@
 Puck::Application.routes.draw do
+  resources :rinktypes
+
   resources :rinks
 
   # The priority is based upon order of creation:
