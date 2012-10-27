@@ -11,7 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027051155) do
+ActiveRecord::Schema.define(:version => 20121027193539) do
+
+  create_table "developmental_programs", :force => true do |t|
+    t.string   "display"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "league_rinks", :force => true do |t|
+    t.integer  "rink_id"
+    t.integer  "rink_league_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "rink_developmental_programs", :force => true do |t|
+    t.integer  "rink_id"
+    t.integer  "developmental_program_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "rink_leagues", :force => true do |t|
+    t.string   "display"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rink_surfaces", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "rink_id"
+    t.integer  "surface_id"
+  end
 
   create_table "rinks", :force => true do |t|
     t.string   "name"
@@ -31,6 +66,12 @@ ActiveRecord::Schema.define(:version => 20121027051155) do
     t.text     "notes"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "surfaces", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

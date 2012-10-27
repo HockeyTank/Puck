@@ -8,6 +8,10 @@ gem 'rails3_acts_as_paranoid'
 gem 'paper_trail'
 gem 'seed-fu'
 
+#form addons
+gem 'simple_form'
+gem 'cocoon'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

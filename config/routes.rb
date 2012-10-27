@@ -1,4 +1,8 @@
 Puck::Application.routes.draw do
+  resources :surfaces
+
+  resources :rink_leagues
+
   resources :rinks
 
   # The priority is based upon order of creation:
