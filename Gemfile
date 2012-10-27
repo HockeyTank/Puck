@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+#Database Related Gems
 gem 'sqlite3'
 gem 'rails3_acts_as_paranoid'
 gem 'paper_trail'
+gem 'seed-fu'
 
 # Gems used only for assets and not required
 # in production environments by default.

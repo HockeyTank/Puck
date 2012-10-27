@@ -71,6 +71,16 @@
     <%= f.label :notes %><br />
     <%= f.text_area :notes %>
   </div>
+
+  <div class="field">
+  <%= f.fields_for :rinkleagues do |builder| %>
+    <fieldset>
+      <%= builder.label :RinkLeagues, "Leagues" %>
+      <%= builder.collection_select :RinkLeagues, RinkLeagues.all, :value, :display  %>
+    </fieldset>
+  <% end %>
+</div> 
+  
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027052255) do
-
-  create_table "hockey_leagues", :force => true do |t|
-    t.integer  "rink_id"
-    t.string   "league"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "rink_programs", :force => true do |t|
-    t.integer  "rink_id"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121027051155) do
 
   create_table "rinks", :force => true do |t|
     t.string   "name"
@@ -45,13 +31,6 @@ ActiveRecord::Schema.define(:version => 20121027052255) do
     t.text     "notes"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-  end
-
-  create_table "rinktypes", :force => true do |t|
-    t.integer  "rink_id"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end
