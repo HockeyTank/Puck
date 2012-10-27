@@ -1,4 +1,6 @@
 Puck::Application.routes.draw do
+  resources :rink_programs
+
   resources :rinktypes
 
   resources :rinks
