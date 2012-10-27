@@ -1,4 +1,6 @@
 Puck::Application.routes.draw do
+  resources :hockey_leagues
+
   resources :rink_programs
 
   resources :rinktypes
