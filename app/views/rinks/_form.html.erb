@@ -22,5 +22,9 @@
      <%= render 'rink_developmental_program_fields', f:builder %>
   <% end %> 
      <%= link_to_add_fields "Add Developmental Program", f, :rink_developmental_programs %>
+  <%= f.simple_fields_for :rink_local_leagues do |builder| %>
+     <%= render 'rink_local_league_fields', f:builder %>
+  <% end %>
+     <%= link_to_add_fields "Add Local Leagues", f, :rink_local_leagues %>
   <%= f.button :submit %>
 <% end %>

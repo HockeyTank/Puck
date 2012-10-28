@@ -1,0 +1,23 @@
+<h1>Listing local_leagues</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @local_leagues.each do |local_league| %>
+  <tr>
+    <td><%= local_league.name %></td>
+    <td><%= link_to 'Show', local_league %></td>
+    <td><%= link_to 'Edit', edit_local_league_path(local_league) %></td>
+    <td><%= link_to 'Destroy', local_league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Local league', new_local_league_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rink_id: 1
+  local_league_id: 1
+
+two:
+  rink_id: 1
+  local_league_id: 1
