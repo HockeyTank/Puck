@@ -16,9 +16,11 @@
   <%= f.input :proshop %>
   <%= f.input :notes %>
   <fieldset>
-    <%= f.simple_fields_for :surface do |face| %>
-    <%= render 'surface_fields', f: face %>
-  <% end %>
+    <%= :rink_surfaces.inspect %>
+    <%= f.simple_fields_for :rink_surfaces do |builder| %>
+      <%= render 'rink_surface_fields', f: builder %>      
+    <% end %>
+    <%= link_to_add_fields "Add Surface", f, :rink_surfaces %>
   </fieldset> 
   <%= f.button :submit %>
 <% end %>
