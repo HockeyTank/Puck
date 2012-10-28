@@ -1,5 +1,7 @@
 Puck::Application.routes.draw do
   
+  resources :local_leagues
+
   resources :surfaces
   resources :rinks
 
