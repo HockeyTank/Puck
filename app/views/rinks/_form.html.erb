@@ -1,4 +1,3 @@
-<%= @rink.surfaces.inspect %>
 <%= simple_form_for(@rink) do |f| %>
   <%= f.input :name %>
   <%= f.input :address1 %>
@@ -15,12 +14,13 @@
   <%= f.input :sticktime %>
   <%= f.input :proshop %>
   <%= f.input :notes %>
-  <fieldset>
-    <%= :rink_surfaces.inspect %>
     <%= f.simple_fields_for :rink_surfaces do |builder| %>
       <%= render 'rink_surface_fields', f: builder %>      
     <% end %>
     <%= link_to_add_fields "Add Surface", f, :rink_surfaces %>
-  </fieldset> 
+  <%= f.simple_fields_for :rink_developmental_programs do |builder| %>
+     <%= render 'rink_developmental_program_fields', f:builder %>
+  <% end %> 
+     <%= link_to_add_fields "Add Developmental Program", f, :rink_developmental_programs %>
   <%= f.button :submit %>
 <% end %>
