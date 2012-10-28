@@ -16,7 +16,7 @@
   <%= f.input :proshop %>
   <%= f.input :notes %>
   <fieldset>
-    <%= f.simple_fields_for :surfaces do |face| %>
+    <%= f.simple_fields_for :surface do |face| %>
     <%= render 'surface_fields', f: face %>
   <% end %>
   </fieldset> 
