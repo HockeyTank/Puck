@@ -11,9 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028231337) do
+ActiveRecord::Schema.define(:version => 20121029000506) do
 
   create_table "developmental_programs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "local_leagues", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -24,6 +30,21 @@ ActiveRecord::Schema.define(:version => 20121028231337) do
     t.integer  "developmental_program_id"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "rink_local_leagues", :force => true do |t|
+    t.integer  "rink_id"
+    t.integer  "local_league_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "rink_notes", :force => true do |t|
+    t.integer  "rink_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "comment"
+    t.string   "author"
   end
 
   create_table "rink_surfaces", :force => true do |t|
@@ -48,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20121028231337) do
     t.boolean  "openhockey"
     t.boolean  "sticktime"
     t.boolean  "proshop"
-    t.text     "notes"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
