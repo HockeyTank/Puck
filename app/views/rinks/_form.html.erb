@@ -1,34 +1,49 @@
-<%= simple_form_for(@rink) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address1 %>
-  <%= f.input :address2 %>
-  <%= f.input :addresscity %>
-  <%= f.input :addressstate %>
-  <%= f.input :addresszip %>
-  <%= f.input :phone1 %>
-  <%= f.input :phone2 %>
-  <%= f.input :website %>
-  <%= f.input :surfacecount %>
-  <%= f.input :indoor %>
-  <%= f.input :openhockey %>
-  <%= f.input :sticktime %>
-  <%= f.input :proshop %>
+
+<%= simple_form_for @rink, :html => { :class => 'form-horizontal' } do |f| %>
+  <ul class="nav nav-pills">
+    <li class="active"><a href="#location" data-toggle="tab">Location</a></li>
+    <li><a href="#features" data-toggle="tab">Features</a></li>
+    <li><a href="#notes" data-toggle="tab">Notes</a></li>
+  </ul>  
+
+  <div class="tab-content">
+  <div class="tab-pane active" id="location">
+    <%= f.input :name %>
+    <%= f.input :address1 %>
+    <%= f.input :address2 %>
+    <%= f.input :addresscity %>
+    <%= f.input :addressstate %>
+    <%= f.input :addresszip %>
+    <%= f.input :phone1 %>
+    <%= f.input :phone2 %>
+    <%= f.input :website %>
+  </div>
+  <div class="tab-pane" id="features">
+    <%= f.input :surfacecount %>
+    <%= f.input :indoor %>
+    <%= f.input :openhockey %>
+    <%= f.input :sticktime %>
+    <%= f.input :proshop %>
     <%= f.simple_fields_for :rink_surfaces do |builder| %>
       <%= render 'rink_surface_fields', f: builder %>      
     <% end %>
     <%= link_to_add_fields "Add Surface", f, :rink_surfaces %>
-  <%= f.simple_fields_for :rink_developmental_programs do |builder| %>
-     <%= render 'rink_developmental_program_fields', f:builder %>
-  <% end %> 
-     <%= link_to_add_fields "Add Developmental Program", f, :rink_developmental_programs %>
-  <%= f.simple_fields_for :rink_local_leagues do |builder| %>
-     <%= render 'rink_local_league_fields', f:builder %>
-  <% end %>
-     <%= link_to_add_fields "Add Local Leagues", f, :rink_local_leagues %>
-  <% f.simple_fields_for :rink_notes do |builder| %>
-    <%= render 'rink_note_fields', f:builder %>
-  <% end %>
-   <%= link_to_add_fields "Add Note", f, :rink_notes %>
-
-  <%= f.button :submit %>
+    <%= f.simple_fields_for :rink_developmental_programs do |builder| %>
+      <%= render 'rink_developmental_program_fields', f:builder %>
+    <% end %> 
+      <%= link_to_add_fields "Add Developmental Program", f, :rink_developmental_programs %>
+    <%= f.simple_fields_for :rink_local_leagues do |builder| %>
+      <%= render 'rink_local_league_fields', f:builder %>
+    <% end %>
+      <%= link_to_add_fields "Add Local Leagues", f, :rink_local_leagues %>
+  </div>
+  <div class="tab-pane" id="notes">
+    <% f.simple_fields_for :rink_notes do |builder| %>
+     <%= render 'rink_note_fields', f:builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Note", f, :rink_notes %>
+  </div> 
+  <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), rinks_path, :class => 'btn' %>
 <% end %>

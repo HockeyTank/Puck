@@ -1,75 +1,47 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Rink -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @rink.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @rink.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address1) %>:</strong></dt>
+  <dd><%= @rink.address1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address2) %>:</strong></dt>
+  <dd><%= @rink.address2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:addresscity) %>:</strong></dt>
+  <dd><%= @rink.addresscity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:addressstate) %>:</strong></dt>
+  <dd><%= @rink.addressstate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:addresszip) %>:</strong></dt>
+  <dd><%= @rink.addresszip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone1) %>:</strong></dt>
+  <dd><%= @rink.phone1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone2) %>:</strong></dt>
+  <dd><%= @rink.phone2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:website) %>:</strong></dt>
+  <dd><%= @rink.website %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:surfacecount) %>:</strong></dt>
+  <dd><%= @rink.surfacecount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:indoor) %>:</strong></dt>
+  <dd><%= @rink.indoor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:openhockey) %>:</strong></dt>
+  <dd><%= @rink.openhockey %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sticktime) %>:</strong></dt>
+  <dd><%= @rink.sticktime %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:proshop) %>:</strong></dt>
+  <dd><%= @rink.proshop %></dd>
+</dl>
 
-<p>
-  <b>Address1:</b>
-  <%= @rink.address1 %>
-</p>
-
-<p>
-  <b>Address2:</b>
-  <%= @rink.address2 %>
-</p>
-
-<p>
-  <b>Addresscity:</b>
-  <%= @rink.addresscity %>
-</p>
-
-<p>
-  <b>Addressstate:</b>
-  <%= @rink.addressstate %>
-</p>
-
-<p>
-  <b>Addresszip:</b>
-  <%= @rink.addresszip %>
-</p>
-
-<p>
-  <b>Phone1:</b>
-  <%= @rink.phone1 %>
-</p>
-
-<p>
-  <b>Phone2:</b>
-  <%= @rink.phone2 %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @rink.website %>
-</p>
-
-<p>
-  <b>Surfacecount:</b>
-  <%= @rink.surfacecount %>
-</p>
-
-<p>
-  <b>Indoor:</b>
-  <%= @rink.indoor %>
-</p>
-
-<p>
-  <b>Openhockey:</b>
-  <%= @rink.openhockey %>
-</p>
-
-<p>
-  <b>Sticktime:</b>
-  <%= @rink.sticktime %>
-</p>
-
-<p>
-  <b>Proshop:</b>
-  <%= @rink.proshop %>
-</p>
-
-
-<%= link_to 'Edit', edit_rink_path(@rink) %> |
-<%= link_to 'Back', rinks_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              rinks_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_rink_path(@rink), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              rink_path(@rink),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
