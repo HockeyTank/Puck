@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 #Database Related Gems
-gem 'sqlite3'
+gem 'mysql2'
 gem 'rails3_acts_as_paranoid'
 gem 'paper_trail'
 gem 'seed-fu'
