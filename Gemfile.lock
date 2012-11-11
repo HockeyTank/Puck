@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 2024c99b26f94a036629ac04bd158c70d2f4f11b
+  specs:
+    jquery-datatables-rails (1.11.1)
+      jquery-rails
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 88541974b557e06a678a0d3eab38ec1dfe03e2c9
   specs:
@@ -143,6 +150,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
@@ -151,6 +159,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass
   debugger
+  jquery-datatables-rails!
   jquery-rails
   minitest
   mysql2
@@ -162,3 +171,4 @@ DEPENDENCIES
   simple_form
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
+  will_paginate
