@@ -6,7 +6,10 @@ class RinksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @rinks }
+      #format.json { render json: @rinks }
+      #the following format statement uses a new class to extend the JSON return
+      #for datatables JQuery plugin
+      format.json {  render json: RinksDatatable.new(view_context)}
     end
   end
 
