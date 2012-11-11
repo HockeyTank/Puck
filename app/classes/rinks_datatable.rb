@@ -9,7 +9,7 @@ class RinksDatatable
     {
       sEcho: params[:sEcho].to_i,
       iTotalRecords: Rink.count,
-      iTotalDisplayRecords: 50,
+      iTotalDisplayRecords: rinks.total_entries,
       aaData: data
     }
   end
