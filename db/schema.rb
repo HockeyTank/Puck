@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20121029000506) do
     t.string   "address2"
     t.string   "addresscity"
     t.string   "addressstate"
-    t.integer  "addresszip"
+    t.string   "addresszip"
     t.string   "phone1"
     t.string   "phone2"
     t.string   "website"
