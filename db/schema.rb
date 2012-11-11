@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20121029000506) do
     t.string   "address2"
     t.string   "addresscity"
     t.string   "addressstate"
-    t.string   "addresszip"
+    t.string   "addresszip",   :limit => 11
     t.string   "phone1"
     t.string   "phone2"
     t.string   "website"
@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(:version => 20121029000506) do
     t.boolean  "openhockey"
     t.boolean  "sticktime"
     t.boolean  "proshop"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "surfaces", :force => true do |t|
