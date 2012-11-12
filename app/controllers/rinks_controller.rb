@@ -1,4 +1,6 @@
 class RinksController < ApplicationController
+ before_filter :require_login
+
   # GET /rinks
   # GET /rinks.json
   def index
@@ -83,4 +85,12 @@ class RinksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def require_login
+    unless user_signed_in?
+      flash[:error] = "You must be signed in"
+      redirect_to root_path
+    end
+  end
+
 end
