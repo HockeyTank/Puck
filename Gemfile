@@ -49,3 +49,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'will_paginate'
+gem 'devise'

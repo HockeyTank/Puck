@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render "shared/header" %>
+
+
+ <div id="user_nav" class="row">
+ 	<div class="span13">
+    
+	</div>
+  </div>
+<div class="row">
+	<div class="span13 pull-right">
+	  <% flash.each do |name, msg| %>
+	    <%= content_tag :div, msg, id: "flash_#{name}", :class => "alert alert-info" %>
+	  <% end %>
+	</div>
+</div>
 
 <%= yield %>
 
