@@ -5,17 +5,17 @@ Fork the repository
 
 make sure you've installed all the proper dependencies
 
-` bundle install `
+``` bundle install ```
 
 copy the existing database config example
 
-` cp config/database.yml.example config/database.yml `
+``` cp config/database.yml.example config/database.yml ```
 
 Edit it with your favorite text editor. (we use postgressql - you should probably do that too)
 
 setup the database
 
-`rake db:setup && rake db:migrate`
+```rake db:setup && rake db:migrate```
 
 if you need a copy of the rinklist - let one of the development staff know. We will provide you with the data sets on an as-needed basis.
 
@@ -25,7 +25,7 @@ Making Contributions
 
 Checkout a feature branch for your code
 
-` git checkout -b my-awesome-feature `
+``` git checkout -b my-awesome-feature ```
 
 hack hack hack
 commit
