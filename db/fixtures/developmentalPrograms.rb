@@ -1,16 +1,13 @@
 if DevelopmentalProgram.count == 0
   DevelopmentalProgram.seed do |s|
-    s.display = "Youth"
-    s.value = "youth"
+    s.name = "Youth"
+end
+
+  DevelopmentalProgram.seed do |s|
+    s.name = "Adult"
   end
 
   DevelopmentalProgram.seed do |s|
-    s.display = "Adult"
-    s.value = "adult"
-  end
-
-  DevelopmentalProgram.seed do |s|
-    s.display = "None"
-    s.value = "none"
+    s.name = "None"
   end
 end
