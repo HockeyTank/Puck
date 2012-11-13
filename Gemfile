@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 #Database Related Gems
+gem 'pg'
 gem 'mysql2'
 gem 'rails3_acts_as_paranoid'
 gem 'paper_trail'
@@ -15,6 +16,8 @@ gem 'simple_form'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'less-rails'
+  gem 'therubyracer'
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
